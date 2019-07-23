@@ -1,0 +1,29 @@
+<hr>
+<div style="background-color:rgba(177, 236, 122, 0.842)">
+<p>Soccer Player Status</p>
+<button (click)="bandera()" >Check</button><br>
+<div *ngIf='estadoPlayer'><img src="assets/imagenes/Kylian.png" alt="Mbappe"></div>
+</div><hr>
+<h1 style="text-align: left">Nationality</h1>
+
+<ul *ngFor="let player of players"
+    [ngSwitch]="player.country">
+    <li *ngSwitchCase="'BO'"  style="color:green; text-align: left">
+    {{player.name}} ({{player.country}}) <hr>
+    </li>
+    <li *ngSwitchCase="'USA'" style="color:red; text-align: left">
+         {{player.name}} ({{player.country}}) <hr style="color:yellow">
+    </li>
+    <li *ngSwitchDefault style="color:blue">
+        {{player.name}} {{player.country}} <hr style="color:yellow">
+    </li>
+
+    <div>
+        <button appPlayer> Buy Player! </button>
+        <p appPlayer> Procesando.... :D</p>
+        <h1 appPlayer> Sea paciente</h1>
+    </div>
+</ul>
+
+
+
